@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <button
+    (click)="handleClickBack()"
+    mat-raised-button>
+    <mat-icon>arrow_back</mat-icon>
+    Back
+  </button>
+  <h1 class="text-center">Dog Marks History</h1>
+  <button
+    (click)="handleClickSort()"
+    mat-mini-fab color="warn"
+    matTooltip="Sort by mark">
+    <mat-icon>
+      {{sort}}
+    </mat-icon>
+  </button>
+  <div class="d-flex flex-wrap justify-content-center">
+    <mat-card class="me-3 mt-3" *ngFor="let record of markRecords">
+      <mat-card-content>
+        <img width="300" alt="dog image"  [src]="record.image"/>
+        <div class="mt-3 d-flex align-items-center">
+          <mat-icon class="text-warning me-2">
+            star
+          </mat-icon>
+          <span>{{record.mark}} / 15</span>
+        </div>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+</div>

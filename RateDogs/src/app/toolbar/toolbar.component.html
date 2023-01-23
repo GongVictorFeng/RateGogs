@@ -1,0 +1,26 @@
+<div class="d-flex align-items-center">
+  <mat-form-field class="me-auto">
+    <mat-label>Dog Breed</mat-label>
+    <mat-select (valueChange)="handleSelectFeed($event)">
+      <mat-option *ngFor="let breed of dogBreeds" [value]="breed">
+      {{breed}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button
+    (click)="handleClickRefresh()"
+    class="me-2"
+    mat-mini-fab
+    matTooltip="Refresh dog">
+    <mat-icon>refresh</mat-icon>
+  </button>
+
+  <button
+    (click)="handleClickHistory()"
+    color="primary"
+    class="me-2"
+    mat-mini-fab
+    matTooltip="Look mark history">
+    <mat-icon>history</mat-icon>
+  </button>
+</div>

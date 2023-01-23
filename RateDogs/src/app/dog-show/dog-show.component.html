@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-center">
+  <img
+    height="400"
+    class="shadow"
+    *ngIf="dogService.dogImage"
+    alt="Dog image"
+    [src]="dogService.dogImage"/>
+
+  <mat-spinner *ngIf="dogService.loading"></mat-spinner>
+
+</div>
